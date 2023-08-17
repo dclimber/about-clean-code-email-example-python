@@ -1,12 +1,12 @@
 import traceback
 from typing import Type
 
-from sending_mails.core.entities import internal_error_mail, network_failure_mail
-from sending_mails.core.interfaces import (
+from sending_mails.core import (
     i_configuration_reader,
     i_mail_client,
     i_test_results_repository,
 )
+from sending_mails.core.entities import internal_error_mail, network_failure_mail
 
 
 class MailNotificationInteractor:
