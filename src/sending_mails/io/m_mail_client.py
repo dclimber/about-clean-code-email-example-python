@@ -1,17 +1,8 @@
-from typing import Union
-
-from sending_mails.core import i_mail_client
-from sending_mails.core.entities import internal_error_mail, network_failure_mail
+from sending_mails.adapters import html_mail, i_mail_client
 
 
 class MailClient(i_mail_client.IMailClient):
     """Actually sends the email."""
 
-    def send(
-        self,
-        mail: Union[
-            internal_error_mail.InternalErrorMail,
-            network_failure_mail.NetworkFailureMail,
-        ],
-    ) -> None:
+    def send(self, mail: html_mail.HtmlMail) -> None:
         pass
